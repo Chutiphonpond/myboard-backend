@@ -22,17 +22,33 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# Welcome to My Board!
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This is a backend application built with [NestJS](https://nestjs.com/) that provides a REST API for managing authentication, posts, comments, and their types. The project is designed to be scalable, modular, and easy to extend.
 
-## Project setup
+---
 
-```bash
-$ yarn install
-```
+## Features
 
-## Compile and run the project
+- **Authentication**: User registration, login, and JWT-based authentication.
+- **Post Management**: Add, edit, and delete posts.
+- **Comment Management**: Add, edit, and delete comments associated with posts.
+- **Type Management**: Assign types to posts for better categorization.
+
+---
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Chutiphonpond/myboard-backend.git
+   cd myboard-backend
+   ```
+
+## Running the Application
+
+To start the application in development mode:
 
 ```bash
 # development
@@ -58,42 +74,41 @@ $ yarn run test:e2e
 $ yarn run test:cov
 ```
 
-## Deployment
+## Technologies Used
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+- Framework: NestJS
+- Database: PostgreSQL
+- Authentication: JSON Web Tokens (JWT)
+- ORM: Prisma
+- Validation: class-validator
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+## API Endpoints
 
-```bash
-$ yarn install -g mau
-$ mau deploy
-```
+### Authentication
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+- GET /users/me - Get me data.
+- POST /auth/signup - Register a new user.
+- POST /auth/signin - Authenticate a user and return a JWT token.
 
-## Resources
+### Posts
 
-Check out a few resources that may come in handy when working with NestJS:
+GET /posts - Get all posts.
+POST /posts - Create a new post (requires authentication).
+PUT /posts/:id - Update a post (requires authentication).
+DELETE /posts/:id - Delete a post (requires authentication).
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+### Comments
 
-## Support
+GET /comments - Get all comments.
+GET /comments/posts/:id - Get a specific comment by ID.
+POST /comments - Create a new comment (requires authentication).
+PUT /comments/:id - Update a comment (requires authentication).
+DELETE /comments/:id - Delete a comment (requires authentication).
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Types
 
-## Stay in touch
+POST /types - Create a new type (requires admin privileges).
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Note from the Developer
 
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Apologies for not completing some API endpoints on time, but I’m working hard to improve and enhance myboard. I hope everyone enjoys using the platform and has a great experience! Thank you for your patience and support ❤️
